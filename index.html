@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CAFÉ ORIGEN, una cafetería ficticia creada como proyecto de portfolio. Descubre su carta, galería y horario de ejemplo.">
+  <title>CAFÉ ORIGEN · Café sin prisas</title>
+  <link rel="icon" href="assets/grano.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="inicio">
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <!-- Cabecera y navegación. Cada enlace apunta al id de una sección. -->
+  <header class="cabecera">
+    <div class="contenedor cabecera-interior">
+      <a class="marca" href="#inicio">
+        <img src="assets/grano.svg" alt="" width="32" height="32">
+        CAFÉ ORIGEN
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="navegacion">
+          <li><a href="#carta">Carta</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#horarios">Horarios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <!-- Portada con una imagen decorativa y una llamada a ver la carta. -->
+    <section class="contenedor portada" aria-labelledby="titulo">
+      <div class="portada-texto">
+        <p class="etiqueta">Cafetería ficticia · Proyecto de portfolio</p>
+        <h1 id="titulo">Café sin<br><em>prisas.</em></h1>
+        <p class="introduccion">Una taza de café, algo recién horneado y un rato para ti. Así imaginamos CAFÉ ORIGEN.</p>
+        <a class="boton" href="#carta">Ver la carta <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="portada-imagen">
+        <img src="assets/cafe.svg" alt="" width="760" height="660">
+        <span class="sello" aria-hidden="true">01 / LA PRIMERA TAZA</span>
+      </div>
+    </section>
+
+    <!-- Cada categoría es una lista. Grid alinea producto y precio. -->
+    <section class="seccion carta" id="carta" aria-labelledby="titulo-carta">
+      <div class="contenedor">
+        <p class="etiqueta">01 / La carta</p>
+        <h2 id="titulo-carta">De la barra a la mesa</h2>
+        <p class="bajada">Bebidas y bocados con precios de ejemplo en euros.</p>
+
+        <div class="categorias">
+          <section class="categoria" aria-labelledby="titulo-bebidas">
+            <h3 id="titulo-bebidas">En la taza</h3>
+            <ul class="productos">
+              <li><span>Espresso</span><strong>1,80 €</strong><small>Corto, intenso y con cuerpo.</small></li>
+              <li><span>Cappuccino</span><strong>3,20 €</strong><small>Espresso, leche y una capa de espuma.</small></li>
+              <li><span>Latte frío</span><strong>3,60 €</strong><small>Espresso con leche y hielo.</small></li>
+            </ul>
+          </section>
+          <section class="categoria" aria-labelledby="titulo-bocados">
+            <h3 id="titulo-bocados">Para acompañar</h3>
+            <ul class="productos">
+              <li><span>Croissant de mantequilla</span><strong>2,40 €</strong><small>Hojaldrado y dorado.</small></li>
+              <li><span>Tostada de tomate</span><strong>3,90 €</strong><small>Pan de masa madre, tomate y aceite de oliva.</small></li>
+              <li><span>Bizcocho de limón</span><strong>3,50 €</strong><small>Una porción con glaseado de limón.</small></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- figure agrupa la ilustración y su pie. -->
+    <section class="contenedor seccion" id="galeria" aria-labelledby="titulo-galeria">
+      <p class="etiqueta">02 / Galería</p>
+      <h2 id="titulo-galeria">El café, de cerca</h2>
+      <p class="bajada">Tres ilustraciones de cómo imaginamos CAFÉ ORIGEN.</p>
+      <div class="galeria">
+        <figure>
+          <img src="assets/cafe.svg" alt="Taza de café con un dibujo de hojas en la espuma, vista desde arriba" width="760" height="660" loading="lazy">
+          <figcaption><span aria-hidden="true">01</span> La primera taza</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/horno.svg" alt="Croissant dorado sobre un plato de cerámica" width="760" height="660" loading="lazy">
+          <figcaption><span aria-hidden="true">02</span> Recién horneado</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/rincon.svg" alt="Una mesa junto a una ventana con una taza y un jarrón" width="760" height="660" loading="lazy">
+          <figcaption><span aria-hidden="true">03</span> Un rincón tranquilo</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- dl relaciona cada grupo de días con su horario. -->
+    <div class="visita">
+      <div class="contenedor seccion visita-interior">
+        <section id="horarios" aria-labelledby="titulo-horarios">
+          <p class="etiqueta">03 / Horarios</p>
+          <h2 id="titulo-horarios">Una pausa en el día</h2>
+          <p>Horario de ejemplo</p>
+          <dl class="horario">
+            <div><dt>Lunes a viernes</dt><dd><time datetime="08:30">08:30</time>–<time datetime="18:30">18:30</time></dd></div>
+            <div><dt>Sábados y domingos</dt><dd><time datetime="09:00">09:00</time>–<time datetime="15:00">15:00</time></dd></div>
+          </dl>
+        </section>
+        <section id="contacto" aria-labelledby="titulo-contacto">
+          <p class="etiqueta">04 / Contacto</p>
+          <h2 id="titulo-contacto">Contacto de muestra</h2>
+          <p>CAFÉ ORIGEN es una cafetería ficticia. Este correo es un ejemplo para el portfolio.</p>
+          <p class="correo">hola@cafe-origen.example</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <p><strong>CAFÉ ORIGEN</strong> · Proyecto ficticio de portfolio</p>
+      <a href="#inicio">Volver arriba <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+</body>
+</html>

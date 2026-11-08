@@ -1,0 +1,244 @@
+/* 1. Paleta y estilos que se aplican a toda la página. */
+:root {
+  --crema: #f8f0e4;
+  --papel: #eee0cc;
+  --tinta: #302018;
+  --cafe: #42271d;
+  --acento: #854425;
+  --linea: #ccb69f;
+  --serif: Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--crema);
+  color: var(--tinta);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+h1, h2, h3, p, figure, dl, dd { margin: 0; }
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: normal;
+  line-height: 1.05;
+}
+
+h2 { font-size: clamp(2.2rem, 5vw, 4rem); }
+h3 { font-size: 1.75rem; }
+
+.contenedor {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+.seccion { padding-block: clamp(3rem, 7vw, 6rem); }
+
+.etiqueta {
+  margin-bottom: 0.85rem;
+  color: var(--acento);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.bajada { margin-top: 0.8rem; }
+
+.salto {
+  position: absolute;
+  z-index: 1;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.6rem 1rem;
+  color: var(--crema);
+  background: var(--cafe);
+  transform: translateY(-150%);
+}
+
+.salto:focus { transform: translateY(0); }
+
+/* 2. Flexbox ordena la marca y los enlaces de la cabecera. */
+.cabecera { border-bottom: 1px solid var(--linea); }
+
+.cabecera-interior, .pie-interior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem 2rem;
+  flex-wrap: wrap;
+  padding-block: 1rem;
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--serif);
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem clamp(0.85rem, 3vw, 2rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navegacion a {
+  display: inline-block;
+  padding-block: 0.3rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.navegacion a:hover, .navegacion a:focus-visible { text-decoration: underline; }
+
+/* 3. Grid divide la portada en dos. clamp limita el tamaño del título. */
+.portada {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  padding-block: clamp(2rem, 6vw, 5rem);
+}
+
+h1 {
+  font-size: clamp(3.6rem, 8vw, 7.25rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+h1 em { color: var(--acento); }
+
+.introduccion {
+  max-width: 31ch;
+  margin-block: 1.35rem 1.75rem;
+  font-size: 1.1rem;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--cafe);
+  color: var(--crema);
+  border-radius: 0.2rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.boton:hover { background: var(--acento); }
+.boton:focus-visible { outline-color: var(--cafe); }
+
+.portada-imagen { position: relative; }
+.portada-imagen img { width: 100%; border-radius: 0.35rem; }
+
+.sello {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  padding: 0.35rem 0.6rem;
+  color: var(--crema);
+  background: var(--cafe);
+  font-size: 0.65rem;
+  letter-spacing: 0.11em;
+}
+
+/* 4. Carta, galería y datos de la cafetería. */
+.carta { background: var(--papel); }
+
+.categorias, .galeria, .visita-interior {
+  display: grid;
+  gap: clamp(1.25rem, 4vw, 3rem);
+}
+
+.categorias, .visita-interior { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.galeria { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.categorias, .galeria { margin-top: 2rem; }
+
+.categoria {
+  padding: clamp(1.15rem, 3vw, 2rem);
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 0.35rem;
+}
+
+.productos {
+  list-style: none;
+  padding: 0;
+  margin: 0.9rem 0 0;
+}
+
+.productos li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 0.8rem;
+  border-top: 1px solid var(--linea);
+  padding-block: 0.8rem;
+}
+
+.productos li:last-child { padding-bottom: 0; }
+.productos small { grid-column: 1 / -1; }
+.productos strong, .horario dd { white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+.galeria img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  border-radius: 0.35rem;
+}
+
+figcaption {
+  padding-block: 0.65rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+figcaption span { color: var(--acento); margin-right: 0.6rem; font-size: 0.75rem; }
+
+.visita { background: var(--cafe); color: var(--crema); }
+.visita .etiqueta { color: #f4c397; }
+.visita h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.85rem; }
+.visita p { max-width: 40ch; }
+
+.horario { margin-top: 0.75rem; }
+
+.horario div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.15rem 1rem;
+  padding-block: 0.55rem;
+  border-bottom: 1px solid #a58874;
+}
+
+.correo {
+  margin-top: 0.75rem;
+  color: #f4c397;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.pie { font-size: 0.88rem; }
+
+/* 5. En pantallas estrechas, las columnas pasan a una sola fila vertical. */
+@media (max-width: 43rem) {
+  .portada, .categorias, .galeria, .visita-interior {
+    grid-template-columns: 1fr;
+  }
+
+  .visita-interior { gap: 2.5rem; }
+  .portada-imagen img { aspect-ratio: 5 / 4; object-fit: cover; }
+}
